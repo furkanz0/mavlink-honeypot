@@ -1,14 +1,25 @@
 from flask import Flask, render_template
 
-from log_reader import (
-    load_logs,
-    get_total_events,
-    get_unique_ip_count,
-    get_suspicious_count,
-    get_last_event_time,
-    get_message_statistics,
-    get_status_statistics,
-)
+try:
+    from log_reader import (
+        load_logs,
+        get_total_events,
+        get_unique_ip_count,
+        get_suspicious_count,
+        get_last_event_time,
+        get_message_statistics,
+        get_status_statistics,
+    )
+except ImportError:
+    from dashboard.log_reader import (
+        load_logs,
+        get_total_events,
+        get_unique_ip_count,
+        get_suspicious_count,
+        get_last_event_time,
+        get_message_statistics,
+        get_status_statistics,
+    )
 
 
 app = Flask(__name__)

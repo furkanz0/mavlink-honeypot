@@ -9,7 +9,7 @@ MAVLink tabanlı İnsansız Hava Aracı (İHA) sistemlerine yönelik siber sald�
 Bu proje iki ana bileşenden oluşur ve iki kişi arasında gevşek bağlı (loosely coupled) bir mimari ile paylaşılmıştır:
 
 1. **Kişi 1 (Backend Ekibi):**
-   - UDP ve TCP MAVLink Dinleyicileri (Port 14550)
+   - UDP (Port 14550) ve TCP (Port 14551) MAVLink Dinleyicileri
    - Paket Ayrıştırıcı (`mavlink_handler.py`)
    - İmza ve Kural Tabanlı Sınıflandırıcı (`event_classifier.py`)
    - Durum ve Davranış Analizörü (`behavior_analyzer.py`)
@@ -104,10 +104,18 @@ pip install -r requirements.txt
   python server.py
   ```
 
-- **TCP Sunucusu (Port 14550):**
+- **TCP Sunucusu (Port 14551):**
   ```bash
   python tcp_server.py
   ```
+
+### Dashboard'u (Web Arayüzü) Başlatma
+
+- **Flask Dashboard:**
+  ```bash
+  python dashboard/app.py
+  ```
+  Tarayıcınızdan [http://127.0.0.1:5000](http://127.0.0.1:5000) adresine giderek güvenlik panelini canlı olarak inceleyebilirsiniz.
 
 ### Simülasyon / Test İstemcilerini Çalıştırma
 
@@ -127,7 +135,7 @@ Tüm birim, entegrasyon ve end-to-end testleri çalıştırmak için:
 ```bash
 pytest -v
 ```
-*(Toplam 58 test mevcuttur; tüm backend bileşenleri, TCP/UDP stabilite ve yük testlerini kapsar.)*
+*(Toplam 62 test mevcuttur; tüm backend bileşenleri, TCP/UDP stabilite, yük ve dashboard testlerini kapsar.)*
 
 ---
 
