@@ -1,0 +1,3 @@
+# Asama 2 - MAVLink Honeypot Bagimliliklari
+pymavlink
+pytest
