@@ -15,7 +15,7 @@ mavlink-honeypot/
 ├── server.py                 # UDP Server
 ├── tcp_server.py             # TCP Server
 ├── events.json               # Ortak veri kaynağı (Dashboard buradan okur)
-├── dashboard/                # Kişi 2'nin çalışma alanı
+├── dashboard/                
 │   ├── app.py                # Flask sunucusu
 │   ├── templates/            # HTML şablonları
 │   └── static/               # CSS, JS, grafik kütüphaneleri
